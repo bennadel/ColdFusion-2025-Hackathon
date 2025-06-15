@@ -31,6 +31,10 @@
 			src="#application.properties.site.assetPrefix#/assets/main.js"
 			nonce="#getCspNonce()#">
 		</script>
+		<script type="text/javascript" nonce="#getCspNonce()#">
+			htmx.config.inlineScriptNonce = "#getCspNonce()#";
+			htmx.config.includeIndicatorStyles = false;
+		</script>
 	</head>
 	<body>
 

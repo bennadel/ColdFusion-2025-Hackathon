@@ -21,7 +21,7 @@ component {
 		// serialized to its own CSV file.
 		variables.contactsProxy = new CsvFileProxy(
 			"contacts.csv",
-			[ "name", "phone", "email", "isPrimary" ]
+			[ "name", "phone", "isPrimary" ]
 		);
 		variables.drinksProxy = new CsvFileProxy(
 			"drinks.csv",
@@ -115,7 +115,6 @@ component {
 					[
 						name: emailToName( email ),
 						phone: "",
-						email,
 						isPrimary: true
 					],
 					// Default some empty contacts to help the user understand the full
@@ -140,6 +139,66 @@ component {
 					[
 						name: "Emergency Vet",
 						isPrimary: false
+					],
+				]
+			);
+			drinksProxy.write(
+				subfolderDirectory,
+				[
+					[
+						name: "Celcius",
+						description: "Peach Vibe",
+						isSelected: false
+					],
+					[
+						name: "Celcius",
+						description: "Sparkling Wild Berry",
+						isSelected: false
+					],
+					[
+						name: "Seltzer",
+						description: "Any flavor",
+						isSelected: false
+					],
+				]
+			);
+			snacksProxy.write(
+				subfolderDirectory,
+				[
+					[
+						name: "Cape Cod Potato Chips",
+						description: "Mesquite BBQ",
+						isSelected: false
+					],
+					[
+						name: "Cape Cod Potato Chips",
+						description: "Original",
+						isSelected: false
+					],
+					[
+						name: "Cape Cod Potato Chips",
+						description: "Sea Salt & Pepper",
+						isSelected: false
+					],
+					[
+						name: "Pretzel Chips",
+						description: "Salt & Pepper",
+						isSelected: false
+					],
+					[
+						name: "Sun Chips",
+						description: "Original",
+						isSelected: false
+					],
+				]
+			);
+			mealsProxy.write(
+				subfolderDirectory,
+				[
+					[
+						name: "Pizza",
+						description: "",
+						isSelected: false
 					],
 				]
 			);

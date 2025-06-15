@@ -164,6 +164,16 @@
 
 
 	/**
+	* Shorthand for encodeForJavaScript().
+	*/
+	public string function efj( string value = "" ) {
+
+		return encodeForJavaScript( value );
+
+	}
+
+
+	/**
 	* Shorthand for encodeForUrl().
 	*/
 	public string function efu( string value = "" ) {

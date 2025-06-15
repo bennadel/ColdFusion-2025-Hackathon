@@ -46,6 +46,10 @@
 		#withTitle( "Sitter Snacks" )#
 	</h1>
 
+	<p class="mb-30">
+		Keeping your sitter happy, one snack at a time.
+	</p>
+
 	<div class="d-flex mb-10">
 		<h2>
 			Contacts
@@ -62,14 +66,11 @@
 		<table border="1">
 		<thead>
 			<tr>
-				<th class="w-35">
+				<th class="w-40">
 					Name
 				</th>
 				<th>
 					Phone
-				</th>
-				<th>
-					Email
 				</th>
 				<th class="w-15 text-center">
 					Primary
@@ -84,9 +85,6 @@
 					</td>
 					<td>
 						#efh( contact.phone )#
-					</td>
-					<td>
-						#efh( contact.email )#
 					</td>
 					<td class="text-center">
 						<cfif contact.isPrimary>
@@ -123,14 +121,14 @@
 		<table border="1">
 		<thead>
 			<tr>
-				<th class="w-35">
+				<th class="w-40">
 					Name
 				</th>
 				<th>
 					Description
 				</th>
 				<th class="w-15 text-center">
-					Selected
+					Desired
 				</th>
 			</tr>
 		</thead>
@@ -195,14 +193,14 @@
 		<table border="1">
 		<thead>
 			<tr>
-				<th class="w-35">
+				<th class="w-40">
 					Name
 				</th>
 				<th>
 					Description
 				</th>
 				<th class="w-15 text-center">
-					Selected
+					Desired
 				</th>
 			</tr>
 		</thead>
@@ -267,14 +265,14 @@
 		<table border="1">
 		<thead>
 			<tr>
-				<th class="w-35">
+				<th class="w-40">
 					Name
 				</th>
 				<th>
 					Description
 				</th>
 				<th class="w-15 text-center">
-					Selected
+					Desired
 				</th>
 			</tr>
 		</thead>

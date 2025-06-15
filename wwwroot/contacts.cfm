@@ -17,7 +17,6 @@
 		data.contacts.append([
 			name: "",
 			phone: "",
-			email: "",
 			isPrimary: false
 		]);
 
@@ -42,7 +41,7 @@
 
 			}
 		);
-		data.contacts = filterInPopulated( data.contacts, [ "name", "phone", "email" ] );
+		data.contacts = filterInPopulated( data.contacts, [ "name", "phone" ] );
 
 		application.dataGateway.write( url.token, data );
 
@@ -69,19 +68,14 @@
 		<table border="1">
 		<thead>
 			<tr>
-				<th class="w-15">
+				<th class="w-50">
 					<label id="name-label" for="name-1">
 						Name
 					</label>
 				</th>
-				<th class="w-25">
+				<th class="w-50">
 					<label id="phone-label" for="phone-1">
 						Phone
-					</label>
-				</th>
-				<th>
-					<label id="email-label" for="email-1">
-						Email
 					</label>
 				</th>
 				<th>
@@ -116,16 +110,6 @@
 							name="phone[]"
 							value="#efa( contact.phone )#"
 							maxlength="20"
-						/>
-					</td>
-					<td>
-						<input
-							id="email-#rowID#"
-							aria-labeledby="email-label"
-							type="text"
-							name="email[]"
-							value="#efa( contact.email )#"
-							maxlength="75"
 						/>
 					</td>
 					<td>
