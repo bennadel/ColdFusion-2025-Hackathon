@@ -308,6 +308,16 @@
 
 
 	/**
+	* I generate the URL to be used with the QR code.
+	*/
+	public string function generateRemoteUrlForBarcode() {
+
+		return "https://youtu.be/Aq5WXmQQooo?si=o23P02cgMG8nfygu";
+
+	}
+
+
+	/**
 	* I safely get the given HTTP header.
 	*/
 	public string function getHeader( required string name ) {

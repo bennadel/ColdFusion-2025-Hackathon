@@ -46,6 +46,7 @@ component {
 		;
 
 		application.dataGateway = new lib.core.DataGateway( expandPath( "/data" ) );
+		application.barcoder = new lib.core.BarCoder();
 
 	}
 

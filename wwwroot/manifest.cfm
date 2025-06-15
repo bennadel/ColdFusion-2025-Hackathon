@@ -323,6 +323,20 @@
 	<hr />
 	<hr class="mb-20" />
 
+	<p class="text-center mb-25">
+		Share this page with your sitter so they can make their selections:
+	</p>
+
+	<div class="d-flex isCentered mb-20">
+		<img
+			src="qrcode.cfm?token=#efu( url.token )#"
+			title="ColdFusion Logo Colors"
+		/>
+	</div>
+
+	<hr />
+	<hr class="mb-20" />
+
 	<p>
 		<a href="#postBackUrl()#&init=1">Re-init</a> the ColdFusion application.
 	</p>
