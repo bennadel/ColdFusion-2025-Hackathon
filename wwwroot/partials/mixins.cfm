@@ -124,8 +124,31 @@
 
 
 	/**
+	* I attempt to extract a name from the given email.
+	*/
+	public string function emailToName( required string email ) {
+
+		var slug = email.listFirst( "@" );
+		var name = slug
+			.lcase()
+			.reReplace( "[\W_]+", " " )
+			.trim()
+		;
+
+		if ( ! name.len() ) {
+
+			return slug;
+
+		}
+
+		return ucFirst( name );
+
+	}
+
+
+	/**
 	* I iterate over the form, and combine any array-like fields into a single array of
-	* objects (plucking samed-indexed properties from each field).
+	* objects (plucking same-indexed properties from each field).
 	*/
 	public array function flattenForm(
 		required struct formScope,

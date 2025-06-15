@@ -29,6 +29,13 @@ a:visited {
 	color: darkred ;
 }
 
+th,
+td {
+	text-align: left ;
+	vertical-align: top ;
+}
+
+
 .visuallyHidden {
 	left: -1000px ;
 	max-height: 1px ;

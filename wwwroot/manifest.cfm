@@ -172,7 +172,7 @@
 		Meals
 	</h2>
 
-	<cfif data.snacks.len()>
+	<cfif data.meals.len()>
 
 		<table border="1" cellpadding="5">
 		<thead>

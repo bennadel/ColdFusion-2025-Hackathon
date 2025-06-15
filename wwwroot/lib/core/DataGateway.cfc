@@ -113,7 +113,7 @@ component {
 				subfolderDirectory,
 				[
 					[
-						name: ucFirst( email.listFirst( "@._-" ) ),
+						name: emailToName( email ),
 						phone: "",
 						email,
 						isPrimary: true

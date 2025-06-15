@@ -86,16 +86,19 @@
 							type="text"
 							name="name[]"
 							value="#efa( meal.name )#"
+							maxlength="50"
 						/>
 					</td>
 					<td>
-						<input
+						<textarea
 							id="description-#rowID#"
 							aria-labeledby="description-label"
 							type="text"
 							name="description[]"
-							value="#efa( meal.description )#"
-						/>
+							maxlength="255"
+							cols="30"
+							rows="5"
+						>#efh( meal.description )#</textarea>
 					</td>
 					<td>
 						<input

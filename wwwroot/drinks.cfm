@@ -87,6 +87,7 @@
 							type="text"
 							name="name[]"
 							value="#efa( drink.name )#"
+							maxlength="50"
 						/>
 					</td>
 					<td>
@@ -96,6 +97,7 @@
 							type="text"
 							name="description[]"
 							value="#efa( drink.description )#"
+							maxlength="50"
 						/>
 					</td>
 					<td>

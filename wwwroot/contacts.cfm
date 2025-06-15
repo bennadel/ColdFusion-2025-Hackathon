@@ -105,6 +105,7 @@
 							type="text"
 							name="name[]"
 							value="#efa( contact.name )#"
+							maxlength="50"
 						/>
 					</td>
 					<td>
@@ -114,6 +115,7 @@
 							type="text"
 							name="phone[]"
 							value="#efa( contact.phone )#"
+							maxlength="20"
 						/>
 					</td>
 					<td>
@@ -123,6 +125,7 @@
 							type="text"
 							name="email[]"
 							value="#efa( contact.email )#"
+							maxlength="75"
 						/>
 					</td>
 					<td>
