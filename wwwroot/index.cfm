@@ -18,19 +18,28 @@
 </cfscript>
 <cfoutput>
 
-	<h1>
+	<h1 class="mb-20">
 		#withTitle( "Sitter Snacks" )#
 	</h1>
 
 	<form method="post" action="#postBackAction()#">
-		<p>
-			<label>Email:</label><br />
-			<input type="text" name="email" value="" maxlength="75" />
+		<label for="email" class="d-flex mb-10">
+			Sign-up With Your Email:
+		</label>
+
+		<p class="d-flex">
+			<input
+				id="email"
+				type="text"
+				name="email"
+				value=""
+				maxlength="75"
+			/>
+			<button type="submit" class="text-nowrap">
+				Create a Snacktacular!
+			</button>
 		</p>
 
-		<button type="submit">
-			Create a Snacktacular!
-		</button>
 	</form>
 
 </cfoutput>

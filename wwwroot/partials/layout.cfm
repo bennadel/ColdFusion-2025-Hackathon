@@ -33,7 +33,11 @@
 		</script>
 	</head>
 	<body>
-		#request.page.body#
+
+		<main id="main" class="main">
+			#request.page.body#
+		</main>
+
 	</body>
 	</html>
 

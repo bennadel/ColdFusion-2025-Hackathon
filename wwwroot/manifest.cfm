@@ -46,16 +46,23 @@
 		#withTitle( "Sitter Snacks" )#
 	</h1>
 
-	<h2>
-		Contacts
-	</h2>
+	<div class="d-flex mb-10">
+		<h2>
+			Contacts
+		</h2>
+		<p class="ms-auto">
+			<a href="./contacts.cfm?token=#efu( url.token )#">Configure Contacts</a> &rarr;
+		</p>
+	</div>
+
+	<hr class="mb-20" />
 
 	<cfif data.contacts.len()>
 
-		<table border="1" cellpadding="5" cellspacing="1">
+		<table border="1">
 		<thead>
 			<tr>
-				<th>
+				<th class="w-35">
 					Name
 				</th>
 				<th>
@@ -64,7 +71,7 @@
 				<th>
 					Email
 				</th>
-				<th>
+				<th class="w-15 text-center">
 					Primary
 				</th>
 			</tr>
@@ -81,7 +88,7 @@
 					<td>
 						#efh( contact.email )#
 					</td>
-					<td>
+					<td class="text-center">
 						<cfif contact.isPrimary>
 							Yes
 						</cfif>
@@ -93,31 +100,36 @@
 
 	</cfif>
 
-	<p>
-		<cfif ! data.contacts.len()>
+	<cfif ! data.contacts.len()>
+		<p class="mb-30">
 			You have no contacts.
-		</cfif>
-		<a href="./contacts.cfm?token=#efu( url.token )#">Edit contacts</a> &rarr;
-	</p>
+		</p>
+	</cfif>
 
-	<hr />
 
-	<h2>
-		Drinks
-	</h2>
+	<div class="d-flex mb-10">
+		<h2>
+			Drinks
+		</h2>
+		<p class="ms-auto">
+			<a href="./drinks.cfm?token=#efu( url.token )#">Configure Drinks</a> &rarr;
+		</p>
+	</div>
+
+	<hr class="mb-20" />
 
 	<cfif data.drinks.len()>
 
-		<table border="1" cellpadding="5" cellspacing="1">
+		<table border="1">
 		<thead>
 			<tr>
-				<th>
+				<th class="w-35">
 					Name
 				</th>
 				<th>
 					Description
 				</th>
-				<th>
+				<th class="w-15 text-center">
 					Selected
 				</th>
 			</tr>
@@ -147,7 +159,7 @@
 							<input type="hidden" name="action" value="toggleDrink" />
 							<input type="hidden" name="rowID" value="#efa( rowID )#" />
 
-							<button type="submit">
+							<button type="submit" class="w-100">
 								#yesNoFormat( drink.isSelected )#
 							</button>
 						</form>
@@ -160,31 +172,36 @@
 
 	</cfif>
 
-	<p>
-		<cfif ! data.drinks.len()>
+	<cfif ! data.drinks.len()>
+		<p class="mb-30">
 			You have no drinks.
-		</cfif>
-		<a href="./drinks.cfm?token=#efu( url.token )#">Edit drinks</a> &rarr;
-	</p>
+		</p>
+	</cfif>
 
-	<hr />
 
-	<h2>
-		Snacks
-	</h2>
+	<div class="d-flex mb-10">
+		<h2>
+			Snacks
+		</h2>
+		<p class="ms-auto">
+			<a href="./snacks.cfm?token=#efu( url.token )#">Configure Snacks</a> &rarr;
+		</p>
+	</div>
+
+	<hr class="mb-20" />
 
 	<cfif data.snacks.len()>
 
-		<table border="1" cellpadding="5" cellspacing="1">
+		<table border="1">
 		<thead>
 			<tr>
-				<th>
+				<th class="w-35">
 					Name
 				</th>
 				<th>
 					Description
 				</th>
-				<th>
+				<th class="w-15 text-center">
 					Selected
 				</th>
 			</tr>
@@ -214,7 +231,7 @@
 							<input type="hidden" name="action" value="toggleSnack" />
 							<input type="hidden" name="rowID" value="#efa( rowID )#" />
 
-							<button type="submit">
+							<button type="submit" class="w-100">
 								#yesNoFormat( snack.isSelected )#
 							</button>
 						</form>
@@ -227,31 +244,36 @@
 
 	</cfif>
 
-	<p>
-		<cfif ! data.snacks.len()>
+	<cfif ! data.snacks.len()>
+		<p class="mb-30">
 			You have no snacks.
-		</cfif>
-		<a href="./snacks.cfm?token=#efu( url.token )#">Edit snacks</a> &rarr;
-	</p>
+		</p>
+	</cfif>
+		
 
-	<hr />
+	<div class="d-flex mb-10">
+		<h2>
+			Meals
+		</h2>
+		<p class="ms-auto">
+			<a href="./meals.cfm?token=#efu( url.token )#">Configure Meals</a> &rarr;
+		</p>
+	</div>
 
-	<h2>
-		Meals
-	</h2>
+	<hr class="mb-20" />
 
 	<cfif data.meals.len()>
 
-		<table border="1" cellpadding="5" cellspacing="1">
+		<table border="1">
 		<thead>
 			<tr>
-				<th>
+				<th class="w-35">
 					Name
 				</th>
 				<th>
 					Description
 				</th>
-				<th>
+				<th class="w-15 text-center">
 					Selected
 				</th>
 			</tr>
@@ -281,10 +303,11 @@
 							<input type="hidden" name="action" value="toggleMeal" />
 							<input type="hidden" name="rowID" value="#efa( rowID )#" />
 
-							<button type="submit">
+							<button type="submit" class="w-100">
 								#yesNoFormat( meal.isSelected )#
 							</button>
 						</form>
+
 					</td>
 				</tr>
 			</cfloop>
@@ -293,18 +316,17 @@
 
 	</cfif>
 
-	<p>
-		<cfif ! data.meals.len()>
+	<cfif ! data.meals.len()>
+		<p class="mb-30">
 			You have no meals.
-		</cfif>
-		<a href="./meals.cfm?token=#efu( url.token )#">Edit meals</a> &rarr;
-	</p>
+		</p>
+	</cfif>
 
 	<hr />
-	<hr />
+	<hr class="mb-20" />
 
 	<p>
-		<a href="./index.cfm?init=1">Re-init</a>
+		<a href="#postBackUrl()#&init=1">Re-init</a> the ColdFusion application.
 	</p>
 
 </cfoutput>

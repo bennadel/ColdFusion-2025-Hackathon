@@ -66,15 +66,15 @@
 			--->
 		</button>
 
-		<table>
+		<table border="1">
 		<thead>
 			<tr>
-				<th>
+				<th class="w-15">
 					<label id="name-label" for="name-1">
 						Name
 					</label>
 				</th>
-				<th>
+				<th class="w-25">
 					<label id="phone-label" for="phone-1">
 						Phone
 					</label>
@@ -134,13 +134,16 @@
 							name="isPrimary[]"
 							value="#efa( contact.isPrimary )#"
 						/>
-						<input
-							id="primaryRowID-#rowID#"
-							type="radio"
-							name="primaryRowID"
-							value="#efa( rowID )#"
-							<cfif contact.isPrimary>checked</cfif>
-						/>
+
+						<label class="d-flex isCentered">
+							<input
+								id="primaryRowID-#rowID#"
+								type="radio"
+								name="primaryRowID"
+								value="#efa( rowID )#"
+								<cfif contact.isPrimary>checked</cfif>
+							/>
+						</label>
 					</td>
 					<td>
 						<button type="submit" name="removeRowID" value="#efa( rowID )#">
@@ -153,7 +156,7 @@
 		</tbody>
 		</table>
 
-		<p>
+		<p class="d-flex">
 			<button type="submit">
 				Save
 			</button>

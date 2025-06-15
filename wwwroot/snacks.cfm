@@ -58,7 +58,7 @@
 			--->
 		</button>
 
-		<table>
+		<table border="1">
 		<thead>
 			<tr>
 				<th>
@@ -116,8 +116,7 @@
 		</tbody>
 		</table>
 
-
-		<p>
+		<p class="d-flex">
 			<button type="submit">
 				Save
 			</button>
