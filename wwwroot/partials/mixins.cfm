@@ -69,6 +69,56 @@
 
 
 	/**
+	* I calculate the CSS class attribute value based on the given conditions.
+	*/
+	public string function classNames( /* ...inputs */ ) {
+
+		var inputs = arrayMap( arguments, ( element ) => element );
+		var names = [];
+
+		for ( var input in inputs ) {
+
+			// Simple values are treated like static class names.
+			if ( isSimpleValue( input ) ) {
+
+				names.append( input );
+
+			// Structs are treated like conditional inclusions (values are either boolean
+			// or non-empty simple values).
+			} else if ( isStruct( input ) ) {
+
+				for ( var key in input ) {
+
+					var value = input[ key ];
+
+					if (
+						( isBoolean( value ) && ! value ) ||
+						( ! isBoolean( value ) && ! len( value ) )
+						) {
+
+						continue;
+
+					}
+
+					names.append( key );
+
+				}
+
+			// Arrays are processed recursively.
+			} else if ( isArray( input ) ) {
+
+				names.append( classNames( argumentCollection = input ) );
+
+			}
+
+		}
+
+		return names.toList( " " );
+
+	}
+
+
+	/**
 	* Shorthand for writeDump().
 	*/
 	public void function dump( any var ) {
@@ -243,6 +293,26 @@
 	public boolean function isGet() {
 
 		return ! isPost();
+
+	}
+
+
+	/**
+	* I safely get the given HTTP header.
+	*/
+	public string function getHeader( required string name ) {
+
+		return ( getHttpRequestData( false ).headers[ name ] ?? "" );
+
+	}
+
+
+	/**
+	* I determine if the current request is being made by HTMX.
+	*/
+	public boolean function isHtmx() {
+
+		return ( getHeader( "HX-Request" ) == "true" );
 
 	}
 

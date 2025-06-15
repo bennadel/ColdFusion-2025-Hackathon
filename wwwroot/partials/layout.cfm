@@ -23,6 +23,11 @@
 		/>
 		<script
 			type="text/javascript"
+			src="#application.properties.site.assetPrefix#/assets/htmx-2.0.4.min.js"
+			nonce="#getCspNonce()#">
+		</script>
+		<script
+			type="text/javascript"
 			src="#application.properties.site.assetPrefix#/assets/main.js"
 			nonce="#getCspNonce()#">
 		</script>

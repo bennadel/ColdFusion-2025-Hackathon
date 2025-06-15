@@ -35,6 +35,10 @@ td {
 	vertical-align: top ;
 }
 
+tr:where(.isSelected) {
+	background-color: darkcyan ;
+	color: white ;
+}
 
 .visuallyHidden {
 	left: -1000px ;

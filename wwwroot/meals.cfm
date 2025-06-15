@@ -90,15 +90,14 @@
 						/>
 					</td>
 					<td>
-						<textarea
+						<input
 							id="description-#rowID#"
 							aria-labeledby="description-label"
 							type="text"
 							name="description[]"
-							maxlength="255"
-							cols="30"
-							rows="5"
-						>#efh( meal.description )#</textarea>
+							value="#efa( meal.description )#"
+							maxlength="100"
+						/>
 					</td>
 					<td>
 						<input
