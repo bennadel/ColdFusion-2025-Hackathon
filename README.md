@@ -44,9 +44,13 @@ Here are the ColdFusion 2025 features that I was trying to explore in this hacka
 
 ### CSV Files (`.csv`)
 
+Example: [`CsvFileProxy.cfc`](https://github.com/bennadel/ColdFusion-2025-Hackathon/blob/f58923a66e2530c1c55f4582670bf28e26e642b0/wwwroot/lib/core/CsvFileProxy.cfc#L26-L94)
+
 One of the biggest new features in ACF 2025 is the ability to read, write, and process CSV (Comma Separated Value) data. To explore this, I'm storing each user's contact info, drinks, snacks, and meal data in a set of CSV files contained within an UUID-based user-specific folder.
 
 ### Property Files (`.properties`)
+
+Example: [`PropertiesFileProxy.cfc`](https://github.com/bennadel/ColdFusion-2025-Hackathon/blob/f58923a66e2530c1c55f4582670bf28e26e642b0/wwwroot/lib/core/PropertiesFileProxy.cfc#L22-L55)
 
 ACF 2025 gives us the ability to create and consume [`.properties` files][wiki-properties]. A `.properties` files is a relatively simple collection of key-value pairs. I'm using this in two ways:
 
@@ -60,17 +64,25 @@ ACF 2025 gives us the ability to create and consume [`.properties` files][wiki-p
 
 ### JAR Paths
 
+Example: [`BarCoder.cfc`](https://github.com/bennadel/ColdFusion-2025-Hackathon/blob/f58923a66e2530c1c55f4582670bf28e26e642b0/wwwroot/lib/core/BarCoder.cfc#L69-L78)
+
 Another _very exciting_ (perhaps the _most exciting_) feature of ACF 2025 is the ability to provide a list of JAR paths to the `createObject()` call. Now, we can load custom Java libraries with better class-loader isolation. In this project, I'm using this to load the ZXing barcode library that I then use to render the shareable QR code at the bottom of the site.
 
 ### Content Security Policy (CSP)
+
+Example: [`layout.cfm`](https://github.com/bennadel/ColdFusion-2025-Hackathon/blob/f58923a66e2530c1c55f4582670bf28e26e642b0/wwwroot/partials/layout.cfm#L18-L37)
 
 Since this site is rendering user-generated content (UGC), security is a consideration. I've included the `this.enableCspNonceForScript` setting in my `Application.cfc`, which automatically injects a `Content-Security-Policy` HTTP header with a randomized nonce (n-once). Then, I'm using the new `getCspNonce()` function to apply this nonce to my script and link tags.
 
 ### Null Coalescing
 
+Example: [`flattenForm()`](https://github.com/bennadel/ColdFusion-2025-Hackathon/blob/f58923a66e2530c1c55f4582670bf28e26e642b0/wwwroot/partials/mixins.cfm#L243-L253)
+
 In addition to "partially fixing" the Elvis Operator (no longer treating the empty-string as a falsy), ACF 2025 introduced the null coalescing operator (`??`). This works similarly to the Elvis Operator, but the right-hand expression is only used if the left-hand value is `null` / `undefined` (ie, the notions of truthy/falsy don't apply). I'm using this in a bunch of places when consuming data that may not be fully defined.
 
 ### Trailing Commas
+
+Example: [`this.mappings`](https://github.com/bennadel/ColdFusion-2025-Hackathon/blob/f58923a66e2530c1c55f4582670bf28e26e642b0/wwwroot/Application.cfc#L17-L23)
 
 ACF 2025 now allows trailing commas in a variety of places such as array and struct definitions. This really has no inherent application value other than developer experience (DX). Specifically, it allows `git diff` rendering and Pull Request (PR) rendering to be a little cleaner. This is really only relevant when working with other developers who are reviewing PRs. That said, I'm using it in a bunch of places in the hackathon.
 
