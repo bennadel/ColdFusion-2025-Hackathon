@@ -108,6 +108,10 @@ In addition to running out of time, and not getting to all the little features I
 
 * ACF 2025 still doesn't allow `field[]` notation for collecting form field submissions as an array. As such, I have to polyfill this functionality in the `onRequestStart()` application life-cycle event handler.
 
+* `array.each()` doesn't return the array reference, it returns `undefined`. As such, you can't include `.each()` in a [fluent set of operations][wiki-fluent] on an array. As such, it just has to be part of a subsequent statement.
+
+* `array.isDefined(0)` throws an out-of-bounds error. It should just return `false` since `0` is _not defined_ on the array. As such, I sometimes have to check `.len()` instead of using `.isDefined()`.
+
 And yet, I had a blast! 'Cause CFML is the cat's pajamas, yo!
 
 ---
@@ -128,5 +132,7 @@ Fun fact: the movie [Happy Gilmore][happy-gilmore] came out _13 years before_ my
 [happy-gilmore]: https://www.imdb.com/title/tt0116483/
 
 [ortus]: https://www.ortussolutions.com/
+
+[wiki-fluent]: https://en.wikipedia.org/wiki/Fluent_interface
 
 [wiki-properties]: https://en.wikipedia.org/wiki/.properties
