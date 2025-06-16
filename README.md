@@ -36,6 +36,14 @@ Next to each entry within the drinks, snacks, and meals section is a toggle butt
 
 Each of the sections has a separate configuration page that allows the line-items to be added, edited, and removed.
 
+## Built Using Docker For Mac
+
+I build this using Docker For Mac. If you want to run this, you should be able to just pull-down the repository and run:
+
+`docker compose up`
+
+... from within the root directory.
+
 ## ColdFusion 2025 Feature Exploration
 
 Here are the ColdFusion 2025 features that I was trying to explore in this hackathon:
